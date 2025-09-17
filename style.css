@@ -1,0 +1,87 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #f4f4f9;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+/* --- Part 1: CSS Animations --- */
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.4s, transform 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #0055cc;
+  transform: scale(1.1);
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: coral;
+  animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+/* --- Part 3: Animation Targets --- */
+.animate-box {
+  width: 100px;
+  height: 100px;
+  margin: 20px auto;
+  background: limegreen;
+  transition: transform 1s ease-in-out;
+}
+
+.animate-box.active {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(0); }
+}
